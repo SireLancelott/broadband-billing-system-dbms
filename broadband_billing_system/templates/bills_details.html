@@ -1,0 +1,38 @@
+<!-- templates/bills_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bills Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="table-container">
+        <h2>Bills Details</h2>
+        <table style="width:100%">
+           
+                <tr>
+                    <th>Bill Number</th>
+                    <th>Customer ID</th>
+                    <th>Subscription ID</th>
+                    <th>Month</th>
+                    <th>Cost</th>
+                    <th>Status</th>
+                </tr>
+            
+                {% for bill in bills %}
+                <tr>
+                    <td>{{ bill.id }}</td>
+                    <td>{{ bill.customer_id }}</td>
+                    <td>{{ bill.subscription_id }}</td>
+                    <td>{{ bill.month }}</td>
+                    <td>{{ bill.cost }}</td>
+                    <td>{{ bill.status }}</td>
+                </tr>
+                {% endfor %}
+            
+        </table>
+    </div>
+</body>
+</html>

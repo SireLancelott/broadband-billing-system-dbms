@@ -1,0 +1,36 @@
+<!-- templates/transaction_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="table-container">
+        <h2>Transaction Details</h2>
+        <table style="width:100%">
+            
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Bill Number</th>
+                    <th>Date of Payment</th>
+                    <th>Paid Amount</th>
+                    <th>Payment Method</th>
+                </tr>
+            
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.id }}</td>
+                    <td>{{ transaction.bill_id }}</td>
+                    <td>{{ transaction.date_of_payment }}</td>
+                    <td>{{ transaction.paid_amount }}</td>
+                    <td>{{ transaction.pay_method }}</td>
+                </tr>
+                {% endfor %}
+          
+        </table>
+    </div>
+</body>
+</html>

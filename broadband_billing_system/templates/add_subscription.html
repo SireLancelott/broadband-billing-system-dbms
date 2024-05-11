@@ -1,0 +1,37 @@
+<!-- templates/success.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Login Successful</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Add New Customer</h2>
+
+        <!-- Form for entering customer details -->
+        <form action="{{ url_for('add_subscription') }}" method="post" style="padding-right: 20px;">
+
+
+            <label for="subscription_cost">Subscription Cost:</label>
+            <input type="text" id="subscription_cost" name="subscription_cost" required><br><br>
+
+            <label for="subscription_details">Subscription Details:</label>
+            <input type="text" id="subscription_details" name="subscription_details" required><br><br>
+
+            <label for="subscription_speed">Subscription Speed:</label>
+            <input type="text" id="subscription_speed" name="subscription_speed" required><br><br>
+
+
+
+
+            <button type="submit">Add Subscription</button>
+        </form>
+    </div>
+</body>
+
+</html>

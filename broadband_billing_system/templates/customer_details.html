@@ -1,0 +1,40 @@
+<!-- templates/customer_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="table-container">
+        <h2>Customer Details</h2>
+        <table style="width:100%">
+           
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Mobile Number</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Customer Type</th>
+                    <th>Customer ID Proof</th>
+                    <!-- <th>User ID</th> -->
+                </tr>
+           
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.mobile_number }}</td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.address }}</td>
+                    <td>{{ customer.type }}</td>
+                    <td>{{ customer.id_proof }}</td>
+                    <!-- <td>{{ customer.user_id }}</td> -->
+                </tr>
+                {% endfor %}
+            
+        </table>
+    </div>
+</body>
+</html>

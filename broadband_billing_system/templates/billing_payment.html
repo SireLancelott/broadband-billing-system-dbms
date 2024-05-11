@@ -1,0 +1,25 @@
+<!-- templates/billing_info.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Information - Broadband Billing System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Bill Payment</h2>
+        <form action="{{ url_for('pay_bill') }}" method="post" style="padding-right: 20px;">
+
+            <label for="bill_number">Bill Number:</label>
+            <input type="text" id="bill_number" name="bill_number" required><br><br>
+
+            <label for="payment_method">Payment Method:</label>
+            <input type="text" id="payment_method" name="payment_method" required><br><br>
+           
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+</body>
+</html>
